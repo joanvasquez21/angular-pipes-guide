@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 })
 export default class NumbersPageComponent { 
   totalSells = signal(2_443_232.5543)
-  percent = signal(2_443_232.5543)
+  percent = signal(32_9)
   
 
 }

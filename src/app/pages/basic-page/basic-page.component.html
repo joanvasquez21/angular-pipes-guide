@@ -3,16 +3,14 @@
   <h3 class="text-xl font-thin">pipes incluidos en angular</h3>
 </section>
 
-<div class="stats shadow">
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
   <div class="stat">
- 
     <div class="stat-title">Lowercase pipe</div>
     <div class="stat-value text-primary">{{ nameUpper() | lowercase }}</div>
     <div class="stat-desc mt-3">{{nameUpper()}} - valor inicial</div>
   </div>
 
   <div class="stat">
- 
     <div class="stat-title">Uppercase pipe</div>
     <div class="stat-value text-secondary">{{ nameLower() | uppercase}} </div>
     <div class="stat-desc">{{ nameLower()}} - valor inicial</div>
@@ -23,5 +21,27 @@
     <div class="stat-value">TitleCase pipe</div>
     <div class="stat-title">{{ fullName() | titlecase }}</div>
     <div class="stat-desc text-secondary">{{ fullName() }} - valor inicial </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="stats shadow">
+  <div class="stat place-items-center">
+    <div class="stat-title">Date Pipe</div>
+    <div class="stat-value">{{customDate() | date}}</div>
+    <div class="stat-desc">{{customDate()}}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Date pipe con zona horaria diferente |short | GMT-6</div>
+    <div class="stat-value text-secondary">{{customDate() | date:'short': "GMT-6" }}</div>
+    <div class="stat-desc text-secondary">{{customDate()}} </div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Date pipe con zona horaria diferente |long | GMT-6</div>
+    <div class="stat-value text-secondary text-lg">{{customDate() | date:'long': "GMT-6" }}</div>
+    <div class="stat-desc text-secondary">{{customDate()}} </div>
   </div>
 </div>

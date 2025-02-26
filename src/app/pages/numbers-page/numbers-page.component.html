@@ -21,4 +21,9 @@
       <div class="stat-value">{{totalSells() | currency:'CAD'}}</div>
       <div class="stat-desc">{{ totalSells()}}</div>
     </div>
+    <div class="stat place-items-center">
+        <div class="stat-title">Percent (percent: "1.2-2")</div>
+        <div class="stat-value">{{percent() | percent: "1.2-2"}}</div>
+        <div class="stat-desc">{{ percent()}}</div>
+      </div>
   </div>
