@@ -1,0 +1,24 @@
+<section class="mx-5">
+    <h1 class="text-2xl font-bold ">pipes numericos</h1>
+    <h3 class="text-xl font-thin">pipes incluidos en angular</h3>
+  </section>
+  
+<div class="stats shadow">
+    <div class="stat place-items-center">
+      <div class="stat-title">Number: '1.0-0' (sin ningun decimal)</div>
+      <div class="stat-value">{{ totalSells() | number:'1.0-0'}}</div>
+      <div class="stat-desc"> {{ totalSells() }}</div>
+    </div>
+  
+    <div class="stat place-items-center">
+        <div class="stat-title">Number: '1.1-2' (de uno a dos decimales)</div>
+        <div class="stat-value">{{ totalSells() + 5 | number:'1.1-2'}}</div>
+        <div class="stat-desc"> {{ totalSells() }}</div>
+      </div>
+  
+    <div class="stat place-items-center">
+      <div class="stat-title">Currency - moneda canada</div>
+      <div class="stat-value">{{totalSells() | currency:'CAD'}}</div>
+      <div class="stat-desc">{{ totalSells()}}</div>
+    </div>
+  </div>
