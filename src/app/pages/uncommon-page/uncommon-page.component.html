@@ -28,4 +28,33 @@
             borrar cliente de la lista de espera
         </button>
     </app-card>
+
+    <app-card title="Slice pipe">
+        <b>original</b>
+        <p class="text-primary">
+            {{clients().join(',') }}
+        </p>
+
+        <b class="mt-2">Slice: 0:2</b>
+        <p class="text-primary"> {{ clients() |  slice: 0 : 2 }}</p>
+
+
+        <b class="mt-2">Slice: 1:2</b>
+        <p class="text-primary"> {{ clients() |  slice: 1 : 2 }}</p>
+
+
+        <b class="mt-2">Slice: 2:4</b>
+        <p class="text-primary"> {{ clients() |  slice: 2 : 4 }}</p>
+
+
+        <b class="mt-2">Slice: 1:4</b>
+        <p class="text-primary"> {{ clients() |  slice: 1 : 4 }}</p>
+
+
+        <b class="mt-2">Slice: 3:4</b>
+        <p class="text-primary"> {{ clients() |  slice: 3 : 4 }}</p>
+
+
+      
+    </app-card>
 </div>
