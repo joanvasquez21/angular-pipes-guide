@@ -31,7 +31,6 @@ export default class BasicPageComponent {
   })
 
   changeLocale(locale: AvailableLocal){
-    
     this.localeService.changeLocal(locale);
   }
 
