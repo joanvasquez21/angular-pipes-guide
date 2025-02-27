@@ -43,5 +43,26 @@
     <div class="stat-title">Date pipe con zona horaria diferente |long | GMT-6</div>
     <div class="stat-value text-secondary text-lg">{{customDate() | date:'long': "GMT-6" }}</div>
     <div class="stat-desc text-secondary">{{customDate()}} </div>
-  </div>
+  </div>  
+</div>
+
+<div class="divider"></div>
+<div class="flex flex-row gap-2 ">
+  <!--CAMBIAR EL IDIOMA DE FORMA DINAMICA-->
+  <h1 class="text-2xl font-bold">Locale actual:
+    <span class="badge badge-secondary">{{ currentLocale()}}</span>
+  </h1>
+  <button (click)="changeLocale('fr')" class="btn btn-primary">
+    changer en français
+  </button>
+
+  <button (click)="changeLocale('en')" class="btn btn-primary">
+    change to english
+  </button>
+
+  <button (click)="changeLocale('es')" class="btn btn-primary">
+    cambiar a español
+  </button>
+
+
 </div>
