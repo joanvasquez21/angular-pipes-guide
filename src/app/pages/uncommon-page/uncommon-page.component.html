@@ -1,65 +1,76 @@
 <section class="mx-5 mb-5">
-    <h3 class="text-xl font-thin">pipes incluidos en angular</h3>
+  <h3 class="text-xl font-thin">pipes incluidos en angular</h3>
 </section>
 
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 
-    <app-card title="i18nSelectPipe">
-        <p>saludos {{client().name}} , es un placer
-             {{ client().gender | i18nSelect:invitationMap }} a nuestro evento
-        </p>
-        <button (click)="changeClient()" class="btn btn-primary">
-            cambiar cliente
-        </button>
-    </app-card>
+  <app-card title="i18nSelectPipe">
+    <p>saludos {{client().name}} , es un placer
+      {{ client().gender | i18nSelect:invitationMap }} a nuestro evento
+    </p>
+    <button (click)="changeClient()" class="btn btn-primary">
+      cambiar cliente
+    </button>
+  </app-card>
 
 
-    <app-card title="i18nPluralPipe">
-        <p>
-            Actualmente hay 
-            {{ clients().length | i18nPlural:clientsMap() }}
-        </p>
+  <app-card title="i18nPluralPipe">
+    <p>
+      Actualmente hay
+      {{ clients().length | i18nPlural:clientsMap() }}
+    </p>
 
-        <button
-            [disabled] = "clients().length == 0"
-            (click)="deleteClient()"
-            class="btn btn-primary"
-        >
-            borrar cliente de la lista de espera
-        </button>
-    </app-card>
+    <button [disabled]="clients().length == 0" (click)="deleteClient()" class="btn btn-primary">
+      borrar cliente de la lista de espera
+    </button>
+  </app-card>
 
-    <app-card title="Slice pipe">
-        <b>original</b>
-        <p class="text-primary">
-            {{clients().join(',') }}
-        </p>
+  <app-card title="Slice pipe">
+    <b>original</b>
+    <p class="text-primary">
+      {{clients().join(',') }}
+    </p>
 
-        <b class="mt-2">Slice: 0:2</b>
-        <p class="text-primary"> {{ clients() |  slice: 0 : 2 }}</p>
+    <b class="mt-2">Slice: 0:2</b>
+    <p class="text-primary"> {{ clients() |  slice: 0 : 2 }}</p>
 
 
-        <b class="mt-2">Slice: 1:2</b>
-        <p class="text-primary"> {{ clients() |  slice: 1 : 2 }}</p>
+    <b class="mt-2">Slice: 1:2</b>
+    <p class="text-primary"> {{ clients() |  slice: 1 : 2 }}</p>
 
 
-        <b class="mt-2">Slice: 2:4</b>
-        <p class="text-primary"> {{ clients() |  slice: 2 : 4 }}</p>
+    <b class="mt-2">Slice: 2:4</b>
+    <p class="text-primary"> {{ clients() |  slice: 2 : 4 }}</p>
 
 
-        <b class="mt-2">Slice: 1:4</b>
-        <p class="text-primary"> {{ clients() |  slice: 1 : 4 }}</p>
+    <b class="mt-2">Slice: 1:4</b>
+    <p class="text-primary"> {{ clients() |  slice: 1 : 4 }}</p>
 
 
-        <b class="mt-2">Slice: 3:4</b>
-        <p class="text-primary"> {{ clients() |  slice: 3 : 4 }}</p>
-    </app-card>
+    <b class="mt-2">Slice: 3:4</b>
+    <p class="text-primary"> {{ clients() |  slice: 3 : 4 }}</p>
+  </app-card>
 
-    <app-card title="json pipe">
-        <pre class="text-primary"> {{ clients() | json }} </pre>
-        <pre class="text-primary"> {{ client() |json }} </pre>
-        <pre class="text-primary"> {{ clients().join(", ") | json}} </pre>
- 
-         
-    </app-card>
+  <app-card title="json pipe">
+    <pre class="text-primary"> {{ clients() | json }} </pre>
+    <pre class="text-primary"> {{ client() |json }} </pre>
+    <pre class="text-primary"> {{ clients().join(", ") | json}} </pre>
+  </app-card>
+
+  <app-card title="keyvalue pipe">
+    <!-- {{profile | keyvalue | json}} -->
+    <ul>
+      @for(item of profile | keyvalue; track $index ){
+      <li>
+        <span>
+          <strong class="text-primary">{{item.key | titlecase }} : </strong>
+          {{item.value}}
+        </span>
+      </li>
+      }
+    </ul>
+
+  </app-card>
+
+
 </div>
