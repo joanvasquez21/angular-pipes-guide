@@ -72,5 +72,25 @@
 
   </app-card>
 
+<app-card title="asyncpipe">
+    <p>{{  promiseValue | async  }}  </p>
+
+    @if( promiseValue | async; as value){
+        <p class="text-primary">{{ value }}</p>
+    }
+
+    <h3>observable</h3>
+    <p> {{myObservableTimer   | async }} </p>
+
+    @if( myObservableTimer | async; as value){
+           <p> valor: {{ value }} </p>
+    } 
+    @else {
+        <p>Esperando primer valor..</p>
+    }
+    
+
+    
+</app-card>
 
 </div>
